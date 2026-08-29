@@ -1,31 +1,30 @@
 # Python EDA Project
 
-## Objective
-Use Python to explore a dataset, identify trends, and produce actionable business insight from raw data.
+## Overview
+This project uses Python to analyze a retail sales dataset and turn raw transaction data into business insight. The goal is to identify the strongest-performing areas, categories, customer segments, and trends that can support strategic decisions.
 
-## Skills Demonstrated
-- Python data cleaning
-- exploratory analysis
-- summarization of key metrics
-- identifying outliers and quality issues
-- data visualization
+## Business Question
+Which products, regions, and customer groups are driving the most revenue, and how can this information inform resource allocation and marketing priorities?
 
-## Typical Workflow
-1. Import the data
-2. Review schema and missing values
-3. Clean columns and standardize formats
-4. Aggregate trends by category or segment
-5. Visualize findings with charts
-6. Communicate recommendations clearly
+## Methodology
+1. Load the sales dataset from the raw data folder
+2. Convert date fields and sort records in time order
+3. Clean missing values and standardize categories
+4. Aggregate revenue by region, category, and customer segment
+5. Produce charts and summary metrics to communicate the findings
 
-## Example Questions
-- Which segments are performing best?
-- Are there any unusual patterns or outliers?
-- What factors are associated with the strongest performance?
-- Which observations should be prioritized for action?
+## Key Findings
+- West was the highest revenue-generating region
+- Electronics was the strongest performing category
+- Corporate customers contributed the most revenue
+- Online sales outperformed in-store sales by a significant margin
+- A relatively small number of revenue clusters drive most of the business value
 
 ## Files
-- `analysis.py` — a sample workflow that demonstrates the core process
+- `analysis.py` — full analysis workflow
+- `images/monthly_revenue_trend.png` — monthly revenue trend
+- `images/top_region_revenue.png` — revenue by region
+- `images/top_category_revenue.png` — revenue by category
 
-## Expected Outcome
-This project helps show that I can move from raw data to business insight in a structured and repeatable way.
+## Business Impact
+This project demonstrates end-to-end analytical thinking: from data cleaning to chart generation to actionable business recommendations. It shows that I can move beyond raw numbers and present insight in a way that supports decision-making.

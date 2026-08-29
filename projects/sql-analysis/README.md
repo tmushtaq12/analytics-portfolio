@@ -1,34 +1,32 @@
-# SQL Analysis Project
+# SQL Sales Analysis Project
 
-## Objective
-Answer business-focused questions using SQL across a realistic dataset.
+## Overview
+This project uses SQL to answer commercial questions about a retail sales dataset. The goal is to move from raw transaction data to actionable business insight using measurable KPIs and trend analysis.
 
 ## Business Questions
-- Which products generate the most revenue?
-- Which regions perform best?
-- Are there seasonal patterns in sales?
-- Which customers or segments are most valuable?
+- Which regions generated the most revenue?
+- Which products contributed the largest sales totals?
+- How did revenue change over time?
+- Which customer segments delivered the strongest business value?
+- How did channel and discounting strategy affect performance?
 
-## Tools
-- SQL
-- PostgreSQL / MySQL / SQLite (adaptable)
+## Methodology
+The SQL workflow includes:
+- filtering and date grouping
+- revenue aggregation by region and category
+- customer and product-level analysis
+- order ranking
+- trend analysis over time
 
-## Example Queries
-This project includes sample SQL questions that demonstrate:
-- JOINs
-- GROUP BY
-- CTEs
-- window functions
-- filtering and date logic
+## Key Findings
+- West generated the highest overall revenue
+- Electronics dominated the product mix in terms of revenue
+- Corporate customers were the strongest revenue segment
+- Online sales were greater than in-store sales across the dataset
+- Revenue concentration appears in a small number of category and customer groups
 
-## File Structure
-- `queries.sql` — reusable SQL queries
+## Files
+- `queries.sql` — SQL analysis script with real business questions and answers
 
-## Suggested Workflow
-1. Load the base dataset
-2. Clean obvious data issues
-3. Answer core business questions
-4. Summarize insights for stakeholders
-
-## Example Summary
-This analysis highlights revenue concentration, performance by region, and recurring trends that may inform pricing and marketing decisions.
+## Business Impact
+This project demonstrates strong SQL fundamentals and communicates a practical understanding of how data analysis supports business decision-making.

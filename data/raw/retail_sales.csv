@@ -1,0 +1,49 @@
+order_id,order_date,region,channel,category,product,units_sold,unit_price,revenue,discount_percent,customer_segment
+1001,2024-01-05,North,Online,Electronics,Laptop,12,899,10788,5,Corporate
+1002,2024-01-10,South,In-Store,Furniture,Office Chair,18,140,2520,10,Consumer
+1003,2024-01-17,West,Online,Home Goods,Air Fryer,22,120,2640,8,Consumer
+1004,2024-01-23,East,Online,Electronics,Tablet,15,320,4800,12,Corporate
+1005,2024-02-02,North,In-Store,Stationery,Desk Organizer,40,25,1000,0,Consumer
+1006,2024-02-08,South,Online,Electronics,Monitor,9,250,2250,15,Corporate
+1007,2024-02-15,East,In-Store,Furniture,Standing Desk,6,650,3900,5,Corporate
+1008,2024-02-22,West,Online,Home Goods,Blender,28,90,2520,10,Consumer
+1009,2024-03-05,North,Online,Electronics,Keyboard,35,55,1925,10,Consumer
+1010,2024-03-14,South,In-Store,Stationery,Notebook Set,70,15,1050,0,Consumer
+1011,2024-03-21,West,In-Store,Electronics,Printer,11,210,2310,8,Small Business
+1012,2024-03-29,East,Online,Home Goods,Vacuum,16,180,2880,12,Consumer
+1013,2024-04-04,North,In-Store,Furniture,Bookshelf,7,430,3010,7,Corporate
+1014,2024-04-12,South,Online,Home Goods,Smart Lamp,25,70,1750,10,Consumer
+1015,2024-04-20,West,Online,Stationery,Whiteboard,20,85,1700,5,Small Business
+1016,2024-04-28,East,In-Store,Electronics,Wireless Mouse,55,35,1925,0,Consumer
+1017,2024-05-03,North,Online,Home Goods,Microwave,10,180,1800,9,Consumer
+1018,2024-05-13,South,In-Store,Electronics,Headphones,21,120,2520,15,Corporate
+1019,2024-05-20,West,Online,Furniture,Office Desk,5,750,3750,8,Corporate
+1020,2024-05-27,East,Online,Stationery,Planner,80,18,1440,0,Consumer
+1021,2024-06-04,North,In-Store,Electronics,Webcam,18,95,1710,10,Small Business
+1022,2024-06-11,South,Online,Furniture,Ergonomic Chair,12,320,3840,12,Corporate
+1023,2024-06-19,West,In-Store,Home Goods,Coffee Maker,17,110,1870,9,Consumer
+1024,2024-06-25,East,Online,Electronics,USB Hub,42,25,1050,5,Consumer
+1025,2024-07-02,North,Online,Furniture,Storage Cabinet,9,360,3240,10,Small Business
+1026,2024-07-09,South,In-Store,Stationery,Marker Set,65,12,780,0,Consumer
+1027,2024-07-16,West,Online,Electronics,Monitor,14,250,3500,15,Corporate
+1028,2024-07-22,East,In-Store,Home Goods,Air Purifier,13,200,2600,8,Consumer
+1029,2024-08-01,North,Online,Stationery,Printer Paper,90,10,900,0,Consumer
+1030,2024-08-08,South,Online,Electronics,USB-C Cable,110,18,1980,0,Consumer
+1031,2024-08-16,West,In-Store,Stationery,Sticky Notes,150,8,1200,0,Consumer
+1032,2024-08-24,East,Online,Furniture,Storage Bench,8,420,3360,11,Small Business
+1033,2024-09-03,North,In-Store,Home Goods,Robot Vacuum,7,450,3150,9,Corporate
+1034,2024-09-12,South,Online,Home Goods,Desk Lamp,33,55,1815,10,Consumer
+1035,2024-09-28,West,Online,Electronics,Laptop,10,899,8990,8,Corporate
+1036,2024-10-07,East,In-Store,Electronics,Tablet,19,320,6080,13,Corporate
+1037,2024-10-15,North,Online,Furniture,Office Chair,20,140,2800,10,Consumer
+1038,2024-10-22,South,In-Store,Electronics,Keyboard,48,55,2640,10,Consumer
+1039,2024-10-29,West,Online,Home Goods,Coffee Maker,24,110,2640,12,Consumer
+1040,2024-11-07,East,Online,Electronics,Monitor,16,250,4000,12,Corporate
+1041,2024-11-15,North,In-Store,Stationery,Planner,52,18,936,0,Consumer
+1042,2024-11-22,South,Online,Furniture,Standing Desk,7,650,4550,9,Corporate
+1043,2024-11-30,West,In-Store,Electronics,Headphones,22,120,2640,14,Corporate
+1044,2024-12-06,East,Online,Home Goods,Air Fryer,18,120,2160,7,Consumer
+1045,2024-12-13,North,Online,Stationery,Notebook Set,75,15,1125,0,Consumer
+1046,2024-12-19,South,In-Store,Electronics,Monitor,13,250,3250,10,Corporate
+1047,2024-12-24,West,Online,Furniture,Office Desk,6,750,4500,8,Corporate
+1048,2024-12-29,East,In-Store,Home Goods,Smart Lamp,29,70,2030,9,Consumer

@@ -1,54 +1,68 @@
 # Data Analytics Portfolio
 
-A practical portfolio showing my analytical thinking across SQL, Python, data cleaning, dashboarding, and business-focused reporting.
+A practical portfolio of retail analytics work showing business problem solving, SQL analysis, Python exploratory analysis, and dashboard storytelling.
 
 ## About Me
-I am a data analyst focused on transforming raw data into actionable business insight. I enjoy working with data to answer business questions, identify patterns, and support better decision-making through clear analysis and reporting.
+I am a data analyst focused on turning raw business data into clear, actionable insight. My projects are built around real-world questions such as sales performance, customer behavior, revenue concentration, and decision-making support for business teams.
 
 ## Core Skills
-- SQL and data querying
-- Python for data cleaning and analysis
-- Exploratory data analysis (EDA)
-- Dashboarding and KPI reporting
-- Business problem solving
-- Data storytelling and stakeholder communication
+- SQL analysis and business querying
+- Python data cleaning and exploratory analysis
+- KPI analysis and trend monitoring
+- Data visualization and reporting
+- Business insight communication
+
+## Key Findings
+These are the main findings from the current projects in this portfolio:
+
+- West was the highest revenue-generating region
+- Electronics was the strongest product category by revenue
+- Corporate customers generated the largest share of revenue
+- Online sales outperformed in-store sales across the retail dataset
+- A small number of regions, categories, and customer segments drive most of the business value
 
 ## Featured Projects
 
 ### 1. SQL Sales Analysis
-This project demonstrates SQL skills including joins, aggregations, filters, and window functions to answer business questions around revenue and performance.
+This project answers business questions using SQL including revenue aggregation, monthly trend analysis, channel comparison, and customer segment breakdown.
 
 See: [projects/sql-analysis/README.md](projects/sql-analysis/README.md)
 
 ### 2. Python EDA Project
-This project focuses on cleaning and exploring data in Python, identifying trends, and summarizing useful business insight.
+This project loads a retail dataset, cleans the data, analyzes revenue trends, and produces business-facing charts and recommendations.
 
 See: [projects/python-eda/README.md](projects/python-eda/README.md)
 
 ### 3. Dashboard Project
-This project emphasizes KPI storytelling and visual reporting to communicate measurable results clearly to decision-makers.
+This project translates the analysis into an executive summary for decision-makers, focusing on KPIs, performance trends, and commercial recommendations.
 
 See: [projects/dashboard-project/README.md](projects/dashboard-project/README.md)
 
 ### 4. Kaggle-Style Retail Analysis
-This project mirrors a real-world analytics workflow using a public-style dataset: cleaning, exploring, summarizing, and delivering actionable insights.
+This project follows a realistic retail analytics workflow using a public-style dataset, blending exploration, insight generation, and recommendation writing.
 
 See: [projects/kaggle-project/README.md](projects/kaggle-project/README.md)
 
-## Project Workflow
-1. Define the business question
-2. Clean and validate the data
-3. Explore trends and relationships
-4. Build meaningful metrics and visuals
-5. Summarize the insight and recommend action
+## Project Screenshots
+
+### Monthly revenue trend
+![Monthly revenue trend](images/monthly_revenue_trend.png)
+
+### Revenue by region
+![Revenue by region](images/top_region_revenue.png)
+
+### Revenue by category
+![Revenue by category](images/top_category_revenue.png)
+
+### Kaggle-style market mix
+![Kaggle analysis output](images/kaggle_region_category.png)
 
 ## Repository Structure
-- `data/` — raw and cleaned data files
-- `sql/` — SQL queries and reusable script files
-- `notebooks/` — Python notebooks or scripts
-- `projects/` — project folders with case studies and documentation
-- `docs/` — notes and supporting analysis materials
-- `images/` — screenshots or visuals
+- `data/` — raw and cleaned datasets
+- `sql/` — SQL query scripts and business logic
+- `projects/` — project folders with documentation and analysis files
+- `images/` — chart output and visual summaries
+- `docs/` — supporting notes and framework
 
 ## Contact
 - LinkedIn: https://www.linkedin.com/in/tmushtaq/
@@ -56,4 +70,4 @@ See: [projects/kaggle-project/README.md](projects/kaggle-project/README.md)
 - GitHub: github.com/your-username
 
 ## Notes
-This portfolio is intentionally simple, clear, and easy to expand as more projects are added over time.
+This portfolio is intentionally clear, practical, and easy to expand with additional analyses over time.
