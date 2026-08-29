@@ -30,6 +30,11 @@ Create a KPI dashboard that translates data into clear business decisions and vi
 
 See: [projects/dashboard-project/README.md](projects/dashboard-project/README.md)
 
+### 4. Kaggle-Style Data Analysis Project
+A structured, competition-style analysis using a public dataset to clean data, uncover patterns, and present an actionable business summary.
+
+See: [projects/kaggle-project/README.md](projects/kaggle-project/README.md)
+
 ## Repository Structure
 - `data/` — raw and cleaned datasets
 - `sql/` — reusable SQL scripts
@@ -46,8 +51,8 @@ See: [projects/dashboard-project/README.md](projects/dashboard-project/README.md
 - Summarize actionable insights
 
 ## Contact
-- LinkedIn: add your profile link
-- Email: add your email
+- LinkedIn: https://www.linkedin.com/in/tmushtaq/
+- Email: tmushtaq599@outlook.com
 - GitHub: github.com/your-username
 
 ## Notes
