@@ -1,54 +1,54 @@
 # Data Analytics Portfolio
 
-This repository is a simple, professional portfolio showing my data analytics work across SQL, Python, and dashboarding.
+A practical portfolio showing my analytical thinking across SQL, Python, data cleaning, dashboarding, and business-focused reporting.
 
 ## About Me
-I enjoy turning raw data into clear business insight. My work focuses on data cleaning, exploratory analysis, KPI tracking, and presenting findings in a way that supports decision-making.
+I am a data analyst focused on transforming raw data into actionable business insight. I enjoy working with data to answer business questions, identify patterns, and support better decision-making through clear analysis and reporting.
 
-## Skills
-- SQL
-- Python (pandas, numpy, matplotlib, seaborn)
-- Excel
-- Power BI / Tableau
-- Data cleaning and preparation
-- Business analysis and reporting
+## Core Skills
+- SQL and data querying
+- Python for data cleaning and analysis
+- Exploratory data analysis (EDA)
+- Dashboarding and KPI reporting
+- Business problem solving
+- Data storytelling and stakeholder communication
 
-## Portfolio Projects
+## Featured Projects
 
-### 1. SQL Analysis Project
-Explore business performance questions using SQL queries, joins, aggregations, and window functions.
+### 1. SQL Sales Analysis
+This project demonstrates SQL skills including joins, aggregations, filters, and window functions to answer business questions around revenue and performance.
 
 See: [projects/sql-analysis/README.md](projects/sql-analysis/README.md)
 
 ### 2. Python EDA Project
-Analyze a dataset, clean data, explore trends, and communicate insights using Python.
+This project focuses on cleaning and exploring data in Python, identifying trends, and summarizing useful business insight.
 
 See: [projects/python-eda/README.md](projects/python-eda/README.md)
 
 ### 3. Dashboard Project
-Create a KPI dashboard that translates data into clear business decisions and visual storytelling.
+This project emphasizes KPI storytelling and visual reporting to communicate measurable results clearly to decision-makers.
 
 See: [projects/dashboard-project/README.md](projects/dashboard-project/README.md)
 
-### 4. Kaggle-Style Data Analysis Project
-A structured, competition-style analysis using a public dataset to clean data, uncover patterns, and present an actionable business summary.
+### 4. Kaggle-Style Retail Analysis
+This project mirrors a real-world analytics workflow using a public-style dataset: cleaning, exploring, summarizing, and delivering actionable insights.
 
 See: [projects/kaggle-project/README.md](projects/kaggle-project/README.md)
 
-## Repository Structure
-- `data/` — raw and cleaned datasets
-- `sql/` — reusable SQL scripts
-- `notebooks/` — analysis notebooks or scripts
-- `projects/` — project-specific work and documentation
-- `docs/` — supporting notes and methodology
-- `images/` — visual assets and screenshots
+## Project Workflow
+1. Define the business question
+2. Clean and validate the data
+3. Explore trends and relationships
+4. Build meaningful metrics and visuals
+5. Summarize the insight and recommend action
 
-## Example Workflows
-- Ask a business question
-- Clean and validate the dataset
-- Explore trends and segmentations
-- Build key metrics and visuals
-- Summarize actionable insights
+## Repository Structure
+- `data/` — raw and cleaned data files
+- `sql/` — SQL queries and reusable script files
+- `notebooks/` — Python notebooks or scripts
+- `projects/` — project folders with case studies and documentation
+- `docs/` — notes and supporting analysis materials
+- `images/` — screenshots or visuals
 
 ## Contact
 - LinkedIn: https://www.linkedin.com/in/tmushtaq/
@@ -56,4 +56,4 @@ See: [projects/kaggle-project/README.md](projects/kaggle-project/README.md)
 - GitHub: github.com/your-username
 
 ## Notes
-This portfolio is intentionally simple and easy to extend as more projects are added.
+This portfolio is intentionally simple, clear, and easy to expand as more projects are added over time.

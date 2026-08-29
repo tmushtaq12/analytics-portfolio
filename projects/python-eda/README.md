@@ -1,33 +1,31 @@
 # Python EDA Project
 
 ## Objective
-Use Python to clean, explore, and analyze a dataset to uncover business insights.
+Use Python to explore a dataset, identify trends, and produce actionable business insight from raw data.
 
 ## Skills Demonstrated
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- basic data cleaning
-- exploratory data analysis
+- Python data cleaning
+- exploratory analysis
+- summarization of key metrics
+- identifying outliers and quality issues
+- data visualization
 
 ## Typical Workflow
-1. Import the dataset
-2. Inspect columns and missing values
-3. Clean and transform the data
-4. Explore distributions and trends
-5. Visualize key findings
-6. Summarize recommendations
+1. Import the data
+2. Review schema and missing values
+3. Clean columns and standardize formats
+4. Aggregate trends by category or segment
+5. Visualize findings with charts
+6. Communicate recommendations clearly
+
+## Example Questions
+- Which segments are performing best?
+- Are there any unusual patterns or outliers?
+- What factors are associated with the strongest performance?
+- Which observations should be prioritized for action?
 
 ## Files
-- `analysis.py` — sample Python workflow
+- `analysis.py` — a sample workflow that demonstrates the core process
 
-## Business Focus
-This project is designed to answer questions like:
-- What patterns are visible in the data?
-- Which segments perform best?
-- Are there outliers or quality issues?
-- What recommendations follow from the analysis?
-
-## Example Outcome
-A well-structured EDA helps uncover customer behavior patterns, revenue drivers, or operational bottlenecks that can inform strategic decisions.
+## Expected Outcome
+This project helps show that I can move from raw data to business insight in a structured and repeatable way.
