@@ -3,7 +3,7 @@
 A practical portfolio showing my analytical thinking across SQL, Python, data cleaning, dashboarding, and business-focused reporting.
 
 ## About Me
-I am a data analyst focused on transforming raw data into actionable business insight. I enjoy working with data to answer business questions, identify patterns, and support better decision-making through clear analysis and reporting.
+I enjoy working with data to answer business questions, identify patterns, and support better decision-making through clear analysis and reporting.
 
 ## Core Skills
 - SQL and data querying
@@ -26,11 +26,11 @@ This project focuses on cleaning and exploring data in Python, identifying trend
 See: [projects/python-eda/README.md](projects/python-eda/README.md)
 
 ### 3. Dashboard Project
-This project emphasizes KPI storytelling and visual reporting to communicate measurable results clearly to decision-makers.
+I generally prefer PowerBI/Tableau for Dashboard visualizations. However due to my fimiliary with Python visualization librarires, this project emphasizes KPI storytelling and visual reporting to communicate measurable results clearly to decision-makers.
 
 See: [projects/dashboard-project/README.md](projects/dashboard-project/README.md)
 
-### 4. Kaggle-Style Retail Analysis
+### 4. Retail Analysis (Kaggle case work)
 This project mirrors a real-world analytics workflow using a public-style dataset: cleaning, exploring, summarizing, and delivering actionable insights.
 
 See: [projects/kaggle-project/README.md](projects/kaggle-project/README.md)
@@ -56,4 +56,4 @@ See: [projects/kaggle-project/README.md](projects/kaggle-project/README.md)
 - GitHub: github.com/your-username
 
 ## Notes
-This portfolio is intentionally simple, clear, and easy to expand as more projects are added over time.
+I've set this portfolio in a way that I hope makes it simple, clear, and easy to expand as more projects are added over time not just for myself but also for any observor to see.
