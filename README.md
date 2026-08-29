@@ -53,7 +53,10 @@ See: [projects/kaggle-project/README.md](projects/kaggle-project/README.md)
 ## Contact
 - LinkedIn: https://www.linkedin.com/in/tmushtaq/
 - Email: tmushtaq599@outlook.com
-- GitHub: github.com/your-username
+- GitHub: [github.com/](https://github.com/tmushtaq12/)
+- Website: [Personal website](https://www.talhahmushtaq.com/)
+- Business: [Motorcycle shop](https://ironmoto.lt/)
+- 
 
 ## Notes
 I've set this portfolio in a way that I hope makes it simple, clear, and easy to expand as more projects are added over time not just for myself but also for any observor to see.
