@@ -29,6 +29,7 @@ These are the main findings from the current projects in this portfolio:
 - A linear regression model predicted Titanic ticket fare with a $20.65 mean absolute error on the test split
 - A TweetEval offensive-speech classifier reached 0.710 validation macro F1 and 0.72 held-out test macro F1
 - A TF-IDF SQuAD retriever reached 60.3% Recall@1 and 84.5% Recall@5
+- A local DistilBERT QA evaluation reached 81.0% exact match and 85.6% token F1 with 173 ms mean latency
 
 ## Featured Projects
 
@@ -42,27 +43,32 @@ This project evaluates the retrieval stage of a RAG system on real SQuAD data, m
 
 See: [projects/rag-retrieval-evaluation/README.md](projects/rag-retrieval-evaluation/README.md)
 
-### 3. SQL Sales Analysis
+### 3. GenAI Evaluation Lab: Extractive QA
+This project runs a real Hugging Face QA model against SQuAD and records exact match, token F1, mean latency, P95 latency, and representative errors in a versioned experiment artifact.
+
+See: [projects/genai-evaluation-lab/README.md](projects/genai-evaluation-lab/README.md)
+
+### 4. SQL Sales Analysis
 This project answers business questions using SQL including revenue aggregation, monthly trend analysis, channel comparison, and customer segment breakdown.
 
 See: [projects/sql-analysis/README.md](projects/sql-analysis/README.md)
 
-### 4. Python EDA Project
+### 5. Python EDA Project
 This project loads a retail dataset, cleans the data, analyzes revenue trends, and produces business-facing charts and recommendations.
 
 See: [projects/python-eda/README.md](projects/python-eda/README.md)
 
-### 5. Dashboard Project
+### 6. Dashboard Project
 This project translates the analysis into an executive summary for decision-makers, focusing on KPIs, performance trends, and commercial recommendations.
 
 See: [projects/dashboard-project/README.md](projects/dashboard-project/README.md)
 
-### 6. Kaggle Titanic Survival Analysis
+### 7. Kaggle Titanic Survival Analysis
 This project uses the real public Titanic competition dataset to demonstrate cleaning, feature engineering, survival-rate analysis, visualization, and responsible interpretation.
 
 See: [projects/kaggle-project/README.md](projects/kaggle-project/README.md)
 
-### 7. Linear Regression: Titanic Fare Prediction
+### 8. Linear Regression: Titanic Fare Prediction
 This project uses the same real dataset to demonstrate a readable machine-learning workflow: preprocessing, one-hot encoding, train/test evaluation, baseline comparison, and diagnostic visualization.
 
 See: [projects/linear-regression/README.md](projects/linear-regression/README.md)
@@ -74,6 +80,9 @@ See: [projects/linear-regression/README.md](projects/linear-regression/README.md
 
 ### RAG retrieval recall
 ![SQuAD retrieval recall](images/squad_retrieval_recall.png)
+
+### GenAI QA evaluation
+![GenAI QA evaluation](images/genai_qa_evaluation.png)
 
 ### Linear regression diagnostics
 ![Titanic fare regression diagnostic dashboard](images/linear_regression_diagnostics.png)

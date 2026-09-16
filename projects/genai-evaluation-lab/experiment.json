@@ -1,0 +1,41 @@
+{
+  "model": "distilbert-base-cased-distilled-squad",
+  "dataset": "SQuAD v2 dev, first 100 answerable examples",
+  "examples": 100,
+  "exact_match": 0.81,
+  "token_f1": 0.8562458374958376,
+  "mean_latency_ms": 173.2274829549715,
+  "p95_latency_ms": 354.61500007659197,
+  "error_examples": [
+    {
+      "question": "Who did Rollo sign the treaty of Saint-Clair-sur-Epte with?",
+      "prediction": "King Charles III of West Francia",
+      "reference": "King Charles III",
+      "f1": 0.667
+    },
+    {
+      "question": "Who upon arriving gave the original viking settlers a common identity?",
+      "prediction": "Viking",
+      "reference": "Rollo",
+      "f1": 0.0
+    },
+    {
+      "question": "Who was the Normans' main enemy in Italy, the Byzantine Empire and Armenia?",
+      "prediction": "Pechenegs, the Bulgars",
+      "reference": "Seljuk Turks",
+      "f1": 0.5
+    },
+    {
+      "question": "Who did the Normans team up with in Anatolia?",
+      "prediction": "Armenian state",
+      "reference": "Turkish forces",
+      "f1": 0.0
+    },
+    {
+      "question": "What were the origins of the Raouliii family?",
+      "prediction": "The Raoulii were descended from an Italo-Norman",
+      "reference": "Norman mercenary",
+      "f1": 0.615
+    }
+  ]
+}
