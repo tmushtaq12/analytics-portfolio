@@ -26,6 +26,8 @@ The model does not use `Survived`, `Name`, `Ticket`, or `Cabin`. Those fields ar
 6. One-hot encode categorical features
 7. Fit `LinearRegression`
 8. Compare the model against a baseline that always predicts the training-set mean fare
+9. Use 5-fold cross-validation to check whether results are stable
+10. Inspect residuals, coefficients, and fare distributions
 
 All preprocessing is inside a scikit-learn `Pipeline`, so the test set is not used when fitting transformations.
 
@@ -43,15 +45,33 @@ python projects/linear-regression/analysis.py
 
 The script prints model metrics and mean-baseline metrics, then reports whether the model improves on the baseline for the fixed test split.
 
-## Output
-![Actual versus predicted fare](../../images/linear_regression_actual_vs_predicted.png)
+The verified run produced:
 
-The diagonal line represents a perfect prediction. Wide scatter around the line indicates that passenger information alone cannot explain every fare difference.
+| Measure | Test split | 5-fold cross-validation |
+| --- | ---: | ---: |
+| MAE | $20.65 | $20.58 +/- $1.82 |
+| RMSE | $30.31 | Not used for CV summary |
+| R2 | 0.406 | 0.385 +/- 0.060 |
+
+The mean-fare baseline had a test MAE of `$25.69`, so the model improved the baseline while still leaving substantial unexplained variation.
+
+## Output
+![Regression diagnostic dashboard](../../images/linear_regression_diagnostics.png)
+
+The dashboard combines four useful views:
+
+- actual versus predicted fare, with the diagonal representing perfect predictions
+- residuals versus predictions, showing where errors are concentrated
+- the largest standardized coefficients, showing model direction and relative strength
+- observed fare distributions by passenger class, grounding the model in the original data
+
+The largest coefficient signal is passenger class, which is consistent with the observed fare distributions. Coefficients should be interpreted as associations in this historical dataset, not causal effects.
 
 ## Honest Limitation
-This is an educational regression example, not a production pricing system. The Titanic data has a historical and unusual pricing context, and the model is evaluated on one fixed holdout split. A stronger version would use cross-validation, investigate outliers, compare regularized regression, and test whether ticket-level grouping changes the result.
+This is an educational regression example, not a production pricing system. The Titanic data has a historical and unusual pricing context. The cross-validation results are more useful than a single split, but a stronger version would compare regularized regression, investigate fare outliers, and test whether ticket-level grouping changes the result.
 
 ## Files
 - `analysis.py` — readable end-to-end modeling script
+- `coefficient_summary.csv` — generated coefficient table for interpretation
 - `../../data/raw/titanic.csv` — real public dataset used as input
-- `../../images/linear_regression_actual_vs_predicted.png` — generated diagnostic chart
+- `../../images/linear_regression_diagnostics.png` — generated four-panel diagnostic dashboard

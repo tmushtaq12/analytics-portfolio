@@ -69,7 +69,7 @@ See: [projects/linear-regression/README.md](projects/linear-regression/README.md
 ![Titanic survival rate by class](images/titanic_survival_by_class.png)
 
 ### Linear regression diagnostics
-![Actual versus predicted Titanic fare](images/linear_regression_actual_vs_predicted.png)
+![Titanic fare regression diagnostic dashboard](images/linear_regression_diagnostics.png)
 
 ## Repository Structure
 - `data/` — raw and cleaned datasets
