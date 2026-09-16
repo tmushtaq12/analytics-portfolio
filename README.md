@@ -94,6 +94,10 @@ See: [projects/linear-regression/README.md](projects/linear-regression/README.md
 - `images/` — chart output and visual summaries
 - `docs/` — supporting notes and framework
 
+## Learn From This Portfolio
+
+The [learning guide](docs/learning-guide.md) explains the concepts behind each project, gives exercises to reproduce the results, and lays out a path from classical NLP to RAG, GenAI evaluation, APIs, and production engineering.
+
 ## Contact
 - LinkedIn: https://www.linkedin.com/in/tmushtaq/
 - Email: tmushtaq599@outlook.com
