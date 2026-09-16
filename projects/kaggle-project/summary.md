@@ -1,16 +1,21 @@
-# Kaggle-Style Project Summary
+# Kaggle Titanic Analysis Summary
 
-## Key Findings
-- Revenue is concentrated in a small number of segments and regions
-- Higher-volume product categories are not always the most profitable
-- Discounting appears to have a measurable effect on volume and conversion patterns
-- Targeted customer segments show stronger revenue contribution than the overall average
+## Executive Summary
 
-## Recommendations
-1. Increase investment in the strongest-performing regions and customer segments
-2. Review pricing strategy for discount-heavy product lines
-3. Focus marketing on categories with higher revenue and better margin efficiency
-4. Use segment-level analysis to improve retention and upsell opportunities
+I analyzed 891 passenger records from the Kaggle Titanic competition. The overall survival rate was 38.4%.
 
-## Closing Note
-This analysis demonstrates a realistic workflow for using data to answer practical business questions and support better strategic decisions.
+The strongest observed differences were by sex and passenger class:
+
+- Female passengers: 74.2% survival
+- Male passengers: 18.9% survival
+- First class: 63.0% survival
+- Second class: 47.3% survival
+- Third class: 24.2% survival
+
+## Recommendation for a Predictive Model
+
+Use `Sex`, `Pclass`, `Age`, `Fare`, `FamilySize`, and `IsAlone` as baseline features for a classification model. Establish a simple baseline first, then compare a decision tree, logistic regression, and random forest using a held-out test set.
+
+## Limitation
+
+This is an exploratory analysis. The group differences show associations in this historical sample; they do not establish causation. A predictive model would need validation before its performance could be trusted.

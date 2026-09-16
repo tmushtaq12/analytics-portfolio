@@ -38,8 +38,8 @@ This project translates the analysis into an executive summary for decision-make
 
 See: [projects/dashboard-project/README.md](projects/dashboard-project/README.md)
 
-### 4. Kaggle-Style Retail Analysis
-This project follows a realistic retail analytics workflow using a public-style dataset, blending exploration, insight generation, and recommendation writing.
+### 4. Kaggle Titanic Survival Analysis
+This project uses the real public Titanic competition dataset to demonstrate cleaning, feature engineering, survival-rate analysis, visualization, and responsible interpretation.
 
 See: [projects/kaggle-project/README.md](projects/kaggle-project/README.md)
 
@@ -54,8 +54,10 @@ See: [projects/kaggle-project/README.md](projects/kaggle-project/README.md)
 ### Revenue by category
 ![Revenue by category](images/top_category_revenue.png)
 
-### Kaggle-style market mix
-![Kaggle analysis output](images/kaggle_region_category.png)
+### Kaggle survival analysis
+![Titanic survival rate by sex](images/titanic_survival_by_sex.png)
+
+![Titanic survival rate by class](images/titanic_survival_by_class.png)
 
 ## Repository Structure
 - `data/` — raw and cleaned datasets

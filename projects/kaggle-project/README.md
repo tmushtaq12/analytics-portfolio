@@ -1,46 +1,74 @@
-# Kaggle-Style Retail Performance Analysis
+# Kaggle Titanic Survival Analysis
 
-## Overview
-This project follows a realistic Kaggle-style workflow using a retail dataset to identify the main drivers of performance and translate them into a business-ready summary.
+## Project Status
+This is a working analysis of the classic [Kaggle Titanic dataset](https://www.kaggle.com/competitions/titanic/data), not a placeholder. The dataset contains 891 passenger records and the target variable is whether each passenger survived.
 
-## Business Problem
-A retail business needs to understand:
-- which regions and categories generate the most revenue
-- which customer segments are the most valuable
-- how channel mix affects sales outcomes
-- where the business should concentrate performance investment
+## Business Question
+Which passenger characteristics were most associated with survival, and how can the findings be communicated clearly to a non-technical audience?
 
 ## Dataset
-The project uses a transaction-level retail dataset with fields such as:
-- `order_id`
-- `order_date`
-- `region`
-- `channel`
-- `category`
-- `product`
-- `units_sold`
-- `revenue`
-- `discount_percent`
-- `customer_segment`
+The CSV contains passenger-level data including:
 
-## Methodology
-1. Load the dataset
-2. Clean and normalize the data
-3. Group performance by region, category, channel, and customer segment
-4. Visualize the strongest patterns
-5. Summarize the commercial opportunity and strategic recommendations
+- `Survived` — target variable: 0 = did not survive, 1 = survived
+- `Pclass` — passenger class
+- `Sex` — passenger sex
+- `Age` — passenger age
+- `SibSp` and `Parch` — family members aboard
+- `Fare` — ticket fare
+- `Embarked` — port of embarkation
+
+The source file is stored locally at `data/raw/titanic.csv` so the analysis can be reproduced without an API key.
+
+## Analysis Workflow
+1. Load 891 records from the CSV
+2. Fill missing ages with the dataset median
+3. Fill the missing embarkation value with the mode
+4. Create `FamilySize`, `IsAlone`, and `AgeGroup` features
+5. Compare survival rates by sex and passenger class
+6. Generate charts and a concise written conclusion
+
+## Results From the Actual Run
+
+| Metric | Result |
+| --- | ---: |
+| Records analyzed | 891 |
+| Overall survival rate | 38.4% |
+| Female survival rate | 74.2% |
+| Male survival rate | 18.9% |
+| 1st-class survival rate | 63.0% |
+| 2nd-class survival rate | 47.3% |
+| 3rd-class survival rate | 24.2% |
 
 ## Key Findings
-- Electronics is the strongest category by revenue
-- West and East lead revenue generation across the dataset
-- Corporate customers contribute the largest share of sales value
-- Online sales are the strongest channel
-- A small number of combinations drive the bulk of revenue, which suggests clear commercial focus areas
+- Sex is the clearest single segmentation: the female survival rate was substantially higher than the male rate.
+- Passenger class also mattered: first-class passengers had a much higher survival rate than third-class passengers.
+- Travelling with family was associated with a different outcome pattern than travelling alone, so family structure is worth including in a predictive model.
+- These are associations from an exploratory analysis, not proof that one variable alone caused the outcome.
 
-## Deliverables
-- `analysis.py` — Python analysis script
-- `summary.md` — final written summary
-- `images/kaggle_region_category.png` — final chart output
+## Generated Visuals
 
-## Business Value
-This project shows the full analytics cycle: investigate, quantify, visualize, and explain the most important business patterns in a way that supports decision-making.
+![Survival rate by sex](../../images/titanic_survival_by_sex.png)
+
+![Survival rate by passenger class](../../images/titanic_survival_by_class.png)
+
+![Passenger outcomes by age group](../../images/titanic_outcomes_by_age_group.png)
+
+## Files
+- `analysis.py` — reproducible cleaning, metrics, charts, and printed findings
+- `summary.md` — short stakeholder-style conclusion
+- `../../data/raw/titanic.csv` — the real public dataset used by the script
+
+## Run It
+
+```powershell
+python projects/kaggle-project/analysis.py
+```
+
+Required packages:
+
+```powershell
+pip install pandas matplotlib seaborn
+```
+
+## What This Demonstrates
+This project demonstrates a complete Kaggle-style workflow: working with a real dataset, handling missing values, engineering useful features, comparing groups, producing visual evidence, and explaining the limits of the conclusion.
