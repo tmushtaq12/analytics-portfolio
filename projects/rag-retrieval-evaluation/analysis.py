@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from typing import Dict, List, Optional, Tuple
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -13,7 +14,7 @@ IMAGE_DIR = BASE_DIR / "images"
 IMAGE_DIR.mkdir(exist_ok=True)
 
 
-def load_squad_questions():
+def load_squad_questions() -> List[dict]:
     """Return answerable questions, answers, and their source contexts."""
     with DATA_PATH.open(encoding="utf-8") as file:
         dataset = json.load(file)
@@ -35,14 +36,21 @@ def load_squad_questions():
     return questions
 
 
-def build_retriever(contexts):
+def build_retriever(contexts: List[str]) -> Tuple[TfidfVectorizer, object]:
     """Index contexts with a lightweight lexical retrieval baseline."""
     vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1, 2), min_df=2)
     matrix = vectorizer.fit_transform(contexts)
     return vectorizer, matrix
 
 
-def retrieve(question, vectorizer, matrix, contexts, history=None, top_k=5):
+def retrieve(
+    question: str,
+    vectorizer: TfidfVectorizer,
+    matrix,
+    contexts: List[str],
+    history: Optional[List[str]] = None,
+    top_k: int = 5,
+) -> List[Tuple[str, float]]:
     """Retrieve the most similar contexts, optionally using conversation history."""
     query = " ".join(history or []) + " " + question
     query_vector = vectorizer.transform([query])
@@ -51,7 +59,7 @@ def retrieve(question, vectorizer, matrix, contexts, history=None, top_k=5):
     return [(contexts[index], scores[index]) for index in ranked_indexes]
 
 
-def evaluate_recall(questions, contexts, vectorizer, matrix):
+def evaluate_recall(questions: List[dict], contexts: List[str], vectorizer: TfidfVectorizer, matrix) -> Dict[int, float]:
     """Measure whether the gold answer appears in a retrieved context."""
     hits = {1: 0, 5: 0}
     for item in questions:

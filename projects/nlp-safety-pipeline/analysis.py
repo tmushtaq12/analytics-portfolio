@@ -1,5 +1,6 @@
 import re
 from pathlib import Path
+from typing import Tuple
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -21,14 +22,17 @@ DATA_DIR = BASE_DIR / "data" / "raw" / "tweet_eval_offensive"
 IMAGE_DIR = BASE_DIR / "images"
 IMAGE_DIR.mkdir(exist_ok=True)
 
+TEXT_COLUMN = "text"
+LABEL_COLUMN = "label"
 
-def load_split(name):
+
+def load_split(name: str) -> Tuple[pd.Series, pd.Series]:
     """Read one TweetEval split and return text and binary labels."""
     data = pd.read_parquet(DATA_DIR / f"{name}.parquet")
-    return data["text"].astype(str), data["label"].astype(int)
+    return data[TEXT_COLUMN].astype(str), data[LABEL_COLUMN].astype(int)
 
 
-def build_classifier():
+def build_classifier() -> Pipeline:
     """Build a transparent text-classification pipeline."""
     return Pipeline(
         steps=[
@@ -55,7 +59,7 @@ def build_classifier():
     )
 
 
-def mask_sensitive_data(text):
+def mask_sensitive_data(text: str) -> str:
     """Mask common contact details before text reaches a downstream model."""
     masked = re.sub(r"\b[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}\b", "[EMAIL]", text)
     masked = re.sub(r"(?<!\w)(?:\+?\d[\d\s().-]{7,}\d)(?!\w)", "[PHONE]", masked)
@@ -63,7 +67,7 @@ def mask_sensitive_data(text):
     return masked
 
 
-def save_confusion_matrix(actual, predicted):
+def save_confusion_matrix(actual: pd.Series, predicted):
     matrix = confusion_matrix(actual, predicted)
     plt.figure(figsize=(6, 5))
     sns.heatmap(

@@ -16,8 +16,11 @@ DATA_PATH = BASE_DIR / "data" / "raw" / "titanic.csv"
 IMAGE_DIR = BASE_DIR / "images"
 IMAGE_DIR.mkdir(exist_ok=True)
 
+NUMERIC_FEATURES = ["Pclass", "Age", "FamilySize"]
+CATEGORICAL_FEATURES = ["Sex", "Embarked"]
 
-def load_data():
+
+def load_data() -> pd.DataFrame:
     """Load the Titanic data and keep only variables known before the trip."""
     data = pd.read_csv(DATA_PATH)
 
@@ -29,15 +32,12 @@ def load_data():
     return data[columns].dropna()
 
 
-def build_model():
+def build_model() -> Pipeline:
     """Build a readable preprocessing and linear-regression pipeline."""
-    numeric_features = ["Pclass", "Age", "FamilySize"]
-    categorical_features = ["Sex", "Embarked"]
-
     preprocessor = ColumnTransformer(
         transformers=[
-            ("numeric", StandardScaler(), numeric_features),
-            ("categorical", OneHotEncoder(handle_unknown="ignore"), categorical_features),
+            ("numeric", StandardScaler(), NUMERIC_FEATURES),
+            ("categorical", OneHotEncoder(handle_unknown="ignore"), CATEGORICAL_FEATURES),
         ]
     )
 
@@ -49,7 +49,7 @@ def build_model():
     )
 
 
-def save_diagnostics(data, actual, predicted, model):
+def save_diagnostics(data: pd.DataFrame, actual, predicted, model: Pipeline) -> None:
     """Save model fit, residual, coefficient, and distribution visuals."""
     residuals = actual - predicted
     feature_names = model.named_steps["preprocessor"].get_feature_names_out()

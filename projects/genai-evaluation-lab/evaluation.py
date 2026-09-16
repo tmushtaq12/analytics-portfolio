@@ -3,6 +3,7 @@ import re
 import string
 import time
 from pathlib import Path
+from typing import Dict, List, Tuple
 
 import matplotlib.pyplot as plt
 from transformers import pipeline
@@ -18,7 +19,7 @@ MODEL_NAME = "distilbert-base-cased-distilled-squad"
 EVALUATION_LIMIT = 100
 
 
-def load_answerable_examples(limit):
+def load_answerable_examples(limit: int) -> List[dict]:
     """Load a deterministic sample of answerable SQuAD questions."""
     with DATA_PATH.open(encoding="utf-8") as file:
         dataset = json.load(file)
@@ -41,14 +42,14 @@ def load_answerable_examples(limit):
     return examples
 
 
-def normalize_text(text):
+def normalize_text(text: str) -> str:
     """Normalize text for fair exact-match comparison."""
     text = text.lower()
     text = "".join(character for character in text if character not in string.punctuation)
     return " ".join(text.split())
 
 
-def token_f1(prediction, reference):
+def token_f1(prediction: str, reference: str) -> float:
     """Calculate token-level F1 for one prediction/reference pair."""
     prediction_tokens = normalize_text(prediction).split()
     reference_tokens = normalize_text(reference).split()
@@ -63,14 +64,14 @@ def token_f1(prediction, reference):
     return 2 * precision * recall / (precision + recall)
 
 
-def score_prediction(prediction, references):
+def score_prediction(prediction: str, references: List[str]) -> Tuple[int, float]:
     """Score against the best of the accepted reference answers."""
     exact_match = max(normalize_text(prediction) == normalize_text(reference) for reference in references)
     f1 = max(token_f1(prediction, reference) for reference in references)
     return int(exact_match), f1
 
 
-def save_metric_chart(metrics):
+def save_metric_chart(metrics: Dict[str, object]) -> None:
     labels = ["Exact match", "Token F1"]
     values = [metrics["exact_match"], metrics["token_f1"]]
     plt.figure(figsize=(7, 5))
