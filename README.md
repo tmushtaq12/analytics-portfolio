@@ -3,7 +3,7 @@
 A practical portfolio of retail analytics work showing business problem solving, SQL analysis, Python exploratory analysis, and dashboard storytelling.
 
 ## About Me
-I am a data analyst focused on turning raw business data into clear, actionable insight. My projects are built around real-world questions such as sales performance, customer behavior, revenue concentration, and decision-making support for business teams.
+I am a data analyst focused on turning raw business data into clear, actionable insight. My projects answer practical questions through SQL, Python, visualization, and structured reporting.
 
 ## Core Skills
 - SQL analysis and business querying
@@ -19,7 +19,9 @@ These are the main findings from the current projects in this portfolio:
 - Electronics was the strongest product category by revenue
 - Corporate customers generated the largest share of revenue
 - Online sales outperformed in-store sales across the retail dataset
-- A small number of regions, categories, and customer segments drive most of the business value
+- In the Kaggle Titanic dataset, the overall survival rate was 38.4%
+- Female passengers had a 74.2% survival rate compared with 18.9% for male passengers
+- First-class passengers had a 63.0% survival rate compared with 24.2% for third-class passengers
 
 ## Featured Projects
 
@@ -69,7 +71,10 @@ See: [projects/kaggle-project/README.md](projects/kaggle-project/README.md)
 ## Contact
 - LinkedIn: https://www.linkedin.com/in/tmushtaq/
 - Email: tmushtaq599@outlook.com
-- GitHub: github.com/your-username
+- GitHub: [github.com/](https://github.com/tmushtaq12/)
+- Website: [Personal website](https://www.talhahmushtaq.com/)
+- Business: [Motorcycle shop](https://ironmoto.lt/)
+- 
 
 ## Notes
 This portfolio is intentionally clear, practical, and easy to expand with additional analyses over time.
