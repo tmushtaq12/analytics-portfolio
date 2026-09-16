@@ -10,6 +10,7 @@ I am a data analyst focused on turning raw business data into clear, actionable 
 - Python data cleaning and exploratory analysis
 - KPI analysis and trend monitoring
 - Data visualization and reporting
+- Introductory machine learning and regression
 - Business insight communication
 
 ## Key Findings
@@ -22,6 +23,7 @@ These are the main findings from the current projects in this portfolio:
 - In the Kaggle Titanic dataset, the overall survival rate was 38.4%
 - Female passengers had a 74.2% survival rate compared with 18.9% for male passengers
 - First-class passengers had a 63.0% survival rate compared with 24.2% for third-class passengers
+- A linear regression model predicted Titanic ticket fare with a $20.65 mean absolute error on the test split
 
 ## Featured Projects
 
@@ -45,6 +47,11 @@ This project uses the real public Titanic competition dataset to demonstrate cle
 
 See: [projects/kaggle-project/README.md](projects/kaggle-project/README.md)
 
+### 5. Linear Regression: Titanic Fare Prediction
+This project uses the same real dataset to demonstrate a readable machine-learning workflow: preprocessing, one-hot encoding, train/test evaluation, baseline comparison, and diagnostic visualization.
+
+See: [projects/linear-regression/README.md](projects/linear-regression/README.md)
+
 ## Project Screenshots
 
 ### Monthly revenue trend
@@ -60,6 +67,9 @@ See: [projects/kaggle-project/README.md](projects/kaggle-project/README.md)
 ![Titanic survival rate by sex](images/titanic_survival_by_sex.png)
 
 ![Titanic survival rate by class](images/titanic_survival_by_class.png)
+
+### Linear regression diagnostics
+![Actual versus predicted Titanic fare](images/linear_regression_actual_vs_predicted.png)
 
 ## Repository Structure
 - `data/` — raw and cleaned datasets
