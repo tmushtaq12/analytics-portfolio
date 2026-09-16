@@ -1,9 +1,9 @@
 # Data Analytics Portfolio
 
-A practical portfolio of retail analytics work showing business problem solving, SQL analysis, Python exploratory analysis, and dashboard storytelling.
+A practical portfolio showing NLP safety, retrieval evaluation, machine learning, SQL analysis, and reproducible Python workflows.
 
 ## About Me
-I am a data analyst focused on turning raw business data into clear, actionable insight. My projects answer practical questions through SQL, Python, visualization, and structured reporting.
+I am a data and machine-learning practitioner focused on turning raw data into reliable, explainable systems. My projects emphasize NLP classification, retrieval evaluation, privacy-aware preprocessing, model diagnostics, and clear communication of limitations.
 
 ## Core Skills
 - SQL analysis and business querying
@@ -11,6 +11,9 @@ I am a data analyst focused on turning raw business data into clear, actionable 
 - KPI analysis and trend monitoring
 - Data visualization and reporting
 - Introductory machine learning and regression
+- NLP classification and text preprocessing
+- Retrieval evaluation and RAG foundations
+- Model evaluation, error analysis, and privacy masking
 - Business insight communication
 
 ## Key Findings
@@ -24,49 +27,53 @@ These are the main findings from the current projects in this portfolio:
 - Female passengers had a 74.2% survival rate compared with 18.9% for male passengers
 - First-class passengers had a 63.0% survival rate compared with 24.2% for third-class passengers
 - A linear regression model predicted Titanic ticket fare with a $20.65 mean absolute error on the test split
+- A TweetEval offensive-speech classifier reached 0.710 validation macro F1 and 0.72 held-out test macro F1
+- A TF-IDF SQuAD retriever reached 60.3% Recall@1 and 84.5% Recall@5
 
 ## Featured Projects
 
-### 1. SQL Sales Analysis
+### 1. NLP Safety Pipeline: Offensive-Speech Detection
+This project uses the real TweetEval benchmark to classify offensive language with TF-IDF and class-balanced logistic regression. It includes macro F1, precision, recall, confusion-matrix analysis, and PII masking for emails, phone numbers, and usernames.
+
+See: [projects/nlp-safety-pipeline/README.md](projects/nlp-safety-pipeline/README.md)
+
+### 2. RAG Retrieval Evaluation: SQuAD
+This project evaluates the retrieval stage of a RAG system on real SQuAD data, measuring Recall@1 and Recall@5 with a transparent TF-IDF baseline before introducing embeddings or an LLM generator.
+
+See: [projects/rag-retrieval-evaluation/README.md](projects/rag-retrieval-evaluation/README.md)
+
+### 3. SQL Sales Analysis
 This project answers business questions using SQL including revenue aggregation, monthly trend analysis, channel comparison, and customer segment breakdown.
 
 See: [projects/sql-analysis/README.md](projects/sql-analysis/README.md)
 
-### 2. Python EDA Project
+### 4. Python EDA Project
 This project loads a retail dataset, cleans the data, analyzes revenue trends, and produces business-facing charts and recommendations.
 
 See: [projects/python-eda/README.md](projects/python-eda/README.md)
 
-### 3. Dashboard Project
+### 5. Dashboard Project
 This project translates the analysis into an executive summary for decision-makers, focusing on KPIs, performance trends, and commercial recommendations.
 
 See: [projects/dashboard-project/README.md](projects/dashboard-project/README.md)
 
-### 4. Kaggle Titanic Survival Analysis
+### 6. Kaggle Titanic Survival Analysis
 This project uses the real public Titanic competition dataset to demonstrate cleaning, feature engineering, survival-rate analysis, visualization, and responsible interpretation.
 
 See: [projects/kaggle-project/README.md](projects/kaggle-project/README.md)
 
-### 5. Linear Regression: Titanic Fare Prediction
+### 7. Linear Regression: Titanic Fare Prediction
 This project uses the same real dataset to demonstrate a readable machine-learning workflow: preprocessing, one-hot encoding, train/test evaluation, baseline comparison, and diagnostic visualization.
 
 See: [projects/linear-regression/README.md](projects/linear-regression/README.md)
 
-## Project Screenshots
+## Selected Evaluation Visuals
 
-### Monthly revenue trend
-![Monthly revenue trend](images/monthly_revenue_trend.png)
+### Offensive-speech classifier
+![Offensive speech confusion matrix](images/offensive_speech_confusion_matrix.png)
 
-### Revenue by region
-![Revenue by region](images/top_region_revenue.png)
-
-### Revenue by category
-![Revenue by category](images/top_category_revenue.png)
-
-### Kaggle survival analysis
-![Titanic survival rate by sex](images/titanic_survival_by_sex.png)
-
-![Titanic survival rate by class](images/titanic_survival_by_class.png)
+### RAG retrieval recall
+![SQuAD retrieval recall](images/squad_retrieval_recall.png)
 
 ### Linear regression diagnostics
 ![Titanic fare regression diagnostic dashboard](images/linear_regression_diagnostics.png)
