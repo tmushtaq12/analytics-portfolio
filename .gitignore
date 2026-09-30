@@ -20,6 +20,8 @@ Thumbs.db
 # Data files (optional: remove if you want to track datasets)
 # data/raw/
 # data/cleaned/
+/data/raw/uci_online_retail/
+/data/processed/
 
 # VS Code
 .vscode/

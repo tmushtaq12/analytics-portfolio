@@ -1,5 +1,7 @@
 # SQL Sales Analysis Project
 
+> **Scope:** This is an introductory six-query exercise written against a conceptual `retail_sales` table. It does not load the repository's retail CSV or create that table. For a full-scale, reproducible analysis with a real SQLite database, use the [Retail Transaction Analytics Capstone](../retail-analytics/README.md) and its eight executable queries.
+
 ## Overview
 This project uses SQL to answer commercial questions about a retail sales dataset. The goal is to move from raw transaction data to actionable business insight using measurable KPIs and trend analysis.
 
@@ -18,15 +20,16 @@ The SQL workflow includes:
 - order ranking
 - trend analysis over time
 
-## Key Findings
-- West generated the highest overall revenue
-- Electronics dominated the product mix in terms of revenue
-- Corporate customers were the strongest revenue segment
-- Online sales were greater than in-store sales across the dataset
-- Revenue concentration appears in a small number of category and customer groups
+## Query Skills Practiced
+- `GROUP BY` aggregations and sorting
+- Monthly date grouping
+- Multi-dimensional segment comparisons
+- Top-N ranking
 
 ## Files
 - `queries.sql` — SQL analysis script with real business questions and answers
 
+The queries demonstrate common grouping, ranking, and date-trend patterns. The older 48-row retail file has no source provenance documented; its category and region findings are not presented as verified commercial results.
+
 ## Business Impact
-This project demonstrates strong SQL fundamentals and communicates a practical understanding of how data analysis supports business decision-making.
+This is SQL practice, not independently validated commercial analysis. Use the transaction capstone for source-backed findings and a database that the project builds itself.

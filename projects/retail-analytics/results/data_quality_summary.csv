@@ -1,0 +1,17 @@
+metric,value
+source_rows,541909
+positive_sales_lines,524878
+gross_positive_sales_gbp,10642110.8
+valid_invoices,19960
+identified_customers,4338
+countries,38
+products,4070
+missing_customer_id_rows,135080
+missing_description_rows,1454
+cancellation_invoice_rows,9288
+negative_quantity_rows,10624
+nonpositive_price_rows,2517
+exact_duplicate_excess_rows,5268
+credit_line_value_gbp,-893979.73
+start_date,2010-12-01
+end_date,2011-12-09

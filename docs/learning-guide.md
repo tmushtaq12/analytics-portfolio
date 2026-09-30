@@ -4,12 +4,13 @@ This guide explains the ideas behind the portfolio projects and gives you a prac
 
 ## Recommended Learning Order
 
-1. [NLP Safety Pipeline](../projects/nlp-safety-pipeline/README.md)
-2. [RAG Retrieval Evaluation](../projects/rag-retrieval-evaluation/README.md)
-3. [GenAI Evaluation Lab](../projects/genai-evaluation-lab/README.md)
-4. [Linear Regression](../projects/linear-regression/README.md)
+1. [Retail Transaction Analytics Capstone](../projects/retail-analytics/README.md) — data quality, SQL, customer analysis, and reporting
+2. [Regression Models](../projects/linear-regression/README.md) — best-fit lines, transformations, errors, and an MLP
+3. [NLP Safety Pipeline](../projects/nlp-safety-pipeline/README.md)
+4. [RAG Retrieval Evaluation](../projects/rag-retrieval-evaluation/README.md)
+5. [GenAI Evaluation Lab](../projects/genai-evaluation-lab/README.md)
 
-The first three projects are the most relevant to NLP/GenAI roles. Linear regression gives you a clean foundation for model training and evaluation.
+The analytics capstone shows how to define trustworthy measures before modeling. Regression introduces controlled model comparison. The final three projects build toward NLP and GenAI work.
 
 ## 1. Foundations: Python and Machine Learning
 
@@ -27,6 +28,71 @@ Start with the [scikit-learn User Guide](https://scikit-learn.org/stable/user_gu
 
 ### Exercise
 Change the NLP classifier's `ngram_range` from `(1, 2)` to `(1, 3)`. Run it again and record whether macro F1, offensive precision, and offensive recall improve or worsen. Write down why a metric tradeoff might matter for a safety system.
+
+## 2. Retail Analytics: Define the Population Before the KPI
+
+The [retail capstone](../projects/retail-analytics/README.md) uses UCI Online Retail, a public transaction workbook with 541,909 invoice lines across one year. It is a stronger analysis foundation than a tiny practice CSV because it includes invoice IDs, stock codes, quantity, unit price, time, customer IDs, and country.
+
+The row-level value is `quantity * unit price`, in GBP. That does not automatically mean profit or net accounting revenue. The source also contains cancellations, negative quantities, exact duplicate rows, missing customer IDs, and a partial final month. The capstone keeps every source row for inspection, flags quality issues, excludes extra exact copies from primary totals, defines positive sales explicitly, and reports credits separately.
+
+The customer work answers different questions at different grains:
+
+- **Invoice grain:** aggregate line amounts by invoice before calculating average invoice value.
+- **Customer grain:** count distinct invoices, sum positive sale value, and measure days since the last observed purchase.
+- **Cohort grain:** group identified customers by first purchase month and count how many return in each later month.
+- **Product/country grain:** aggregate sales and distinct invoices without treating line count as customer count.
+
+RFM means recency, frequency, and monetary value. This project converts each measure to a 1-to-5 quintile score and adds the scores. The labels such as `Champions` and `At risk` are heuristics for exploration, not validated customer types or a churn model.
+
+### Exercise
+Run the capstone, then query `data/processed/online_retail.sqlite` with `projects/retail-analytics/queries.sql`. Compare monthly positive sales with signed credit activity. Quantify how totals change if exact duplicates are retained, and explain why customer-level results exclude rows without a customer ID while total country sales do not. Do not describe the result as margin: the data does not provide reliable costs.
+
+## 3. Regression: Lines, Errors, Log Targets, and Neural Networks
+
+The [regression project](../projects/linear-regression/README.md) predicts Titanic fare using information available before the voyage. It compares a training-mean baseline, an age-only best-fit line, multiple linear regression, log-target linear regression, and a small multilayer perceptron (MLP) neural network.
+
+### Best-fit line and residuals
+
+For one input `x` and target `y`, a line predicts `y_hat = slope * x + intercept`. Ordinary least squares chooses the slope and intercept to minimize the sum of squared residuals. A residual is `y - y_hat`: positive means the observation is above the prediction; negative means below it. A pattern in residuals can show curvature, unequal error spread, or outliers that a single score hides.
+
+The Titanic fare model uses several columns, so it is a multivariable linear model rather than one line on a two-dimensional plot. The project also fits an illustrative one-feature age-to-fare line. Its coefficient describes an association in this historical sample, not a causal effect.
+
+### Error metrics
+
+For actual values `y` and predictions `y_hat`:
+
+- `MAE = mean(abs(y - y_hat))` is the average absolute miss and remains in GBP.
+- `MSE = mean((y - y_hat) ** 2)` squares misses and gives large errors more weight; its units are GBP squared.
+- `RMSE = sqrt(MSE)` also emphasizes large misses but returns to GBP.
+- `R2 = 1 - sum((y - y_hat) ** 2) / sum((y - mean(y)) ** 2)` compares the model with a constant prediction at the evaluated target mean. It is not percent accuracy and can be negative.
+
+Always identify which split a score describes. Here, the fixed 20% test score estimates this fitted pipeline on one held-out split. Five shuffled folds summarize training-data variability; they are not five new test sets and do not guarantee future performance.
+
+### Log transforms
+
+When a positive target has a long right tail, `log1p(y)` compresses large values. Fit the model on the transformed training target, then use `expm1(prediction)` to convert predictions back before calculating MAE or RMSE in GBP. This changes the loss geometry and model emphasis; it does not make errors disappear. The log-target model is one candidate to compare, not an automatic upgrade.
+
+The implementation uses scikit-learn's `TransformedTargetRegressor` so inverse transformation is part of prediction rather than a forgotten manual step. Preprocessing remains inside the pipeline and is fitted on training data only.
+
+### Neural-network basics
+
+A feed-forward network computes weighted sums plus biases, applies nonlinear activations in hidden layers, and produces an output. Training adjusts weights to reduce a loss. More hidden units increase flexibility, but also make overfitting and interpretation more difficult. An MLP is not automatically superior to a linear model, particularly on a small dataset.
+
+The project uses one hidden layer with 16 units, L-BFGS optimization, regularization (`alpha=0.01`), a fixed random seed, and the same preprocessing and log-target wrapper as the comparison requires. The small example makes the network concrete without presenting it as production experience.
+
+### Reproduced comparison
+
+| Model | Test MAE | Test RMSE | Test R2 | Five-fold mean MAE +/- SD |
+| --- | ---: | ---: | ---: | ---: |
+| Training-mean baseline | GBP 25.69 | GBP 39.38 | -0.002 | Not applicable |
+| Multiple linear | GBP 20.65 | GBP 30.31 | 0.406 | GBP 20.59 +/- 2.36 |
+| Log-target linear | GBP 10.79 | GBP 25.08 | 0.594 | GBP 13.38 +/- 3.47 |
+| Log-target MLP | GBP 12.61 | GBP 28.48 | 0.476 | GBP 12.52 +/- 2.52 |
+
+The best test-split MAE and best cross-validation mean are not the same model. Treat that as evidence of split/model-selection uncertainty, not a reason to tune against the held-out test. The exact model settings and generated values are in [`model_comparison.csv`](../projects/linear-regression/model_comparison.csv).
+
+### Exercise
+Inspect three largest absolute test residuals and note their passenger class, ticket group, and fare. Then propose a group-aware split by ticket. State in advance which metric should decide a model comparison, fit and tune using training data only, and open the test set once for the final result.
 
 ## 2. NLP Classification
 
